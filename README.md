@@ -1,3 +1,8 @@
+# Service link
+https://minter-service.online/
+
+# Template
+```python
 import pika
 
 # user settings
@@ -28,3 +33,5 @@ channel.basic_consume(q_name, callback, auto_ack=True)
 print(' [*] Waiting for messages:')
 channel.start_consuming()
 connection.close()
+
+```
