@@ -1,4 +1,4 @@
-# Service link
+### Minter Notification service
 https://minter-service.online/
 
 # Template
