@@ -20,6 +20,7 @@ def callback(ch, method, properties, body):
     :param body: incoming data
     """
     print(body)
+    ch.basic_ack(delivery_tag=method.delivery_tag)
 
 
 # setting amqp
@@ -27,7 +28,7 @@ url = f"amqp://{login}:{password}@{host}:{port}"
 params = pika.URLParameters(url)
 connection = pika.BlockingConnection(params)
 channel = connection.channel()
-channel.basic_consume(q_name, callback, auto_ack=True)
+channel.basic_consume(q_name, callback, auto_ack=False)
 
 # start consuming
 print(' [*] Waiting for messages:')
